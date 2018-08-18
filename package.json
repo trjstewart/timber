@@ -1,0 +1,27 @@
+{
+  "name": "timber",
+  "version": "1.0.0",
+  "description": "timber",
+  "main": "index.js",
+  "scripts": {
+    "start": "babel-node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trjstewart/timber.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/trjstewart/timber/issues"
+  },
+  "homepage": "https://github.com/trjstewart/timber#readme",
+  "dependencies": {
+    "babel-preset-env": "^1.7.0",
+    "express": "^4.16.3",
+    "express-graphql": "^0.6.12",
+    "faker": "^4.1.0",
+    "graphql": "^0.13.2"
+  }
+}
