@@ -1,0 +1,45 @@
+.Modal__Wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 5;
+  display: none;
+  justify-content: center;
+  align-items: center; 
+
+  &.Modal__Wrapper--Open {
+    display: flex;
+  }
+
+  .Modal__CloseButtoon {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    color: #555 !important;
+    cursor: pointer;
+
+    &:hover {
+      color: #000 !important;
+    }
+  }
+
+  .Modal__Background {
+    width: 100%;
+    height: 100%;
+    background: rgba(34, 34, 34, 0.45);
+    position: absolute;
+    z-index: -1;
+  }
+
+  .Modal__Container {
+    background: #fff;
+    max-height: 90vh;
+    width: 85vw;
+    max-width: 800px;
+    overflow: auto;
+    padding: 25px;
+    position: relative;
+  }
+}
