@@ -1,6 +1,8 @@
 import express from 'express'
 import faker from 'faker'
 
+var cors = require('cors')
+
 const state = {
   trees: [],
 }
@@ -45,6 +47,8 @@ state.trees = treeUrls.map(treeUrl => {
 // }
 
 const app = express()
+
+app.use(cors())
 
 app.get('/', (req, res) => res.send('Hello World!'))
 app.get('/trees', (req, res) => res.json(state.trees))

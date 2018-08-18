@@ -18,7 +18,9 @@
   },
   "homepage": "https://github.com/trjstewart/timber#readme",
   "dependencies": {
+    "axios": "^0.18.0",
     "babel-preset-env": "^1.7.0",
+    "cors": "^2.8.4",
     "express": "^4.16.3",
     "express-graphql": "^0.6.12",
     "faker": "^4.1.0",
