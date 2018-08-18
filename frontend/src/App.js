@@ -3,7 +3,8 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import './App.css';
 
-import Home from './routes/Home';
+import HomeRoute from './routes/Home';
+import SwipeRoute from './routes/Swipe';
 import Page404 from './routes/404';
 
 class App extends Component {
@@ -14,7 +15,8 @@ class App extends Component {
         <div>
           <div className="App-body">
             <Switch>
-              <Route exact path="/" component={Home} />
+              <Route exact path="/" component={HomeRoute} />
+              <Route path="/swipe" component={SwipeRoute} />
               <Route component={Page404} />
             </Switch>
           </div>
