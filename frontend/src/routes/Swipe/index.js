@@ -18,14 +18,14 @@ class Swipe extends Component {
                     alertLeft={<CustomAlertLeft />} 
                     onEnd={() => console.log('end')}
                     className='master-root'>
-                    {data.map((item, key) => (
+                    {data.map((item, key) => 
                         <Card
                             key={key}
                             onSwipeLeft={() => console.log('swipe left')}
                             onSwipeRight={() => console.log('swipe right')}>
                             <h2>{item}</h2>
                         </Card>
-                    ))}
+                    )}
                 </Cards>
             </div>
         );
