@@ -1,5 +1,5 @@
 import express from 'express'
-import graphqlHTTP from'express-graphql'
+import faker from 'faker'
 
 const state = {
   trees: [],
@@ -16,11 +16,16 @@ const treeUrls = [
   'https://i.imgur.com/CeTv2iR.jpg',
 ]
 
-treeUrls.map(tree => {
+state.trees = treeUrls.map(treeUrl => {
   return {
-    name: `Cian's Tree`,
-    circumference: 1,
-
+    name: faker.name.firstName() + ' ' + faker.name.lastName(),
+    circumference: faker.random.number(1000),
+    height:faker.random.number(200),
+    type: 'soft',
+    age: faker.random.number(100),
+    weight: faker.random.number(500),
+    preferedType: 'hard',
+    picture: treeUrl,
   }
 })
 
@@ -41,38 +46,8 @@ treeUrls.map(tree => {
 
 const app = express()
 
-import {
-  graphql,
-  GraphQLSchema,
-  GraphQLObjectType,
-  GraphQLString
-} from 'graphql';
-
-var MyGraphQLSchema = new GraphQLSchema({
-  query: new GraphQLObjectType({
-    name: 'RootQueryType',
-    fields: {
-      hello: {
-        type: GraphQLString,
-        resolve() {
-          return 'worlds';
-        }
-      },
-      cianSucks: {
-        type: GraphQLString,
-        resolve() {
-          return 'this is definatly true!';
-        }
-      }
-    }
-  })
-});
-
 app.get('/', (req, res) => res.send('Hello World!'))
-app.use('/graphql', graphqlHTTP({
-  schema: MyGraphQLSchema,
-  graphiql: true
-}));
+app.get('/trees', (req, res) => res.json(state.trees))
 
-app.listen(8080, () => console.log('Example app listening on port 3000!'))
+app.listen(8080, () => console.log('Example app listening on port 8080!'))
 
